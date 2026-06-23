@@ -14,7 +14,9 @@ class UserAdapter {
 
             critic: user.critic ?? false,
 
-        }
+        };
     }
 
 }
+
+module.exports = UserAdapter;
