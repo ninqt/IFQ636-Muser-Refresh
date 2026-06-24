@@ -1,14 +1,21 @@
 
+const Task = require('../models/Task');  
+
 class ReviewFacade {
     static makeReview(user,title, artist_name, description, rating){
-        return;
+        const review = ReviewFactory.createReview(user.id,title,artist_name,description,rating);
+        ReviewBuilder.buildReview(review,user);
+        const task = await Task.create(review);
+        ReviewObserver.notifyObservers(review);
+        return task;
     }
 }
 
 
 class ReviewFactory{
-    static createReview(title, artist_name, description, rating){
+    static createReview(userId,title, artist_name, description, rating){
         const review = {
+            userId:userId,
             title:title,
             artist_name:artist_name,
             description:description,
