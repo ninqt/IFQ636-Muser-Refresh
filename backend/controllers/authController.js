@@ -2,7 +2,7 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const UserAdapter = require('../adapters/userAdapter');
+
 
 const generateToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' });
@@ -24,7 +24,7 @@ const registerUser = async (req, res) => {
 const loginUser = async (req, res) => {
     const { email, password } = req.body;
     try {
-        const user = UserAdapter.adapt(await User.findOne({ email }));
+        const user = await User.findOne({ email });
         if (user && (await bcrypt.compare(password, user.password))) {
             res.json({ id: user.id, name: user.name, email: user.email, admin:user.admin, token: generateToken(user.id) });
         } else {
