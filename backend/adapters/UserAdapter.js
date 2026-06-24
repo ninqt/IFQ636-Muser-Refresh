@@ -11,8 +11,6 @@ class UserAdapter {
 
             email: user.email,
 
-            password: user.password,
-
             admin: user.admin ?? false,
 
             critic: user.critic ?? false,
