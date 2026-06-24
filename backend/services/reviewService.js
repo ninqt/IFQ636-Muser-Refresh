@@ -1,6 +1,6 @@
 
 class ReviewFacade {
-    static makeReivew(user,title, artist_name, description, rating){
+    static makeReview(user,title, artist_name, description, rating){
         return;
     }
 }
