@@ -10,6 +10,10 @@ const Profile = () => {
     university: '',
     address: '',
   });
+  const [roles, setRoles] = useState({
+    admin:false,
+    critic:false
+  })
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
