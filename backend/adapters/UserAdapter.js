@@ -1,6 +1,9 @@
 class UserAdapter {
 
     static adapt(user) {
+        if (!user){
+            return null;
+        }
         return {
 
 
