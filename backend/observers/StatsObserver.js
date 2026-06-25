@@ -21,4 +21,4 @@ class StatsObserver{
 
 }
 
-export default class StatsObserver;
+module.exports = StatsObserver;

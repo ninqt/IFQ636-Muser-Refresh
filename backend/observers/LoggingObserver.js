@@ -1,3 +1,4 @@
+const { default: StatsObserver } = require("./StatsObserver")
 
 
 class LoggingObserver {
@@ -8,4 +9,4 @@ class LoggingObserver {
     }
 }
 
-export default LoggingObserver;
+module.exports = StatsObserver;
