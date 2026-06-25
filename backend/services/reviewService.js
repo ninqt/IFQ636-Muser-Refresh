@@ -9,7 +9,6 @@ class ReviewFacade {
         ReviewBuilder.buildReview(review,user);
         const task = await Task.create(review);
         ReviewObserver.notifyObservers(task); //Observers are notified with the task so they can track review id if needed
-        console.log(task)
         return task;
     }
 }
