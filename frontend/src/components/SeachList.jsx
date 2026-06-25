@@ -40,7 +40,12 @@ const SearchList = ({ tasks }) => {
             </span>
           )}
           </div>
+          <div className="font-bold text-white">
+            <p className ="text-white">
+              {task.date}
+            </p>
           </div>
+        </div>
         );
       })}
     </div>
