@@ -7,7 +7,7 @@ class StatsObserver{
         console.log(
             `Total Reviews: ${this.totalReviews}`
         );
-        if (review.isCritic){
+        if (review.isCriticReview){
             this.criticReviews += 1;
             console.log(
                 `Total Critic Reviews: ${this.criticReviews}`

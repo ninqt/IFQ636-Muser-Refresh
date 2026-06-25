@@ -4,7 +4,7 @@ const LoggingObserver =  require('../observers/LoggingObserver');
 const StatsObserver = require('../observers/StatsObserver');
 
 class ReviewFacade {
-    static makeReview(user,title, artist_name, description, rating){
+    static async makeReview(user,title, artist_name, description, rating){
         const review = ReviewFactory.createReview(user.id,title,artist_name,description,rating);
         ReviewBuilder.buildReview(review,user);
         const task = await Task.create(review);
@@ -38,8 +38,8 @@ class ReviewBuilder{
         review.isCriticReview = user.critic
     }
     static setDateTime(review){
-        review.date = new Date().toLocaleDateString
-        review.time = new Date().toLocaleTimeString
+        review.date = new Date().toLocaleDateString()
+        review.time = new Date().toLocaleTimeString()
     }
     static setHighlightable(review){
         review.isHighlightable = (review.description.trim().split(/\s+/).length || 0) >= 50
