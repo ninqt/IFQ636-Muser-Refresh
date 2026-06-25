@@ -8,4 +8,4 @@ class LoggingObserver {
     }
 }
 
-export default class LoggingObserver;
+export default LoggingObserver;
