@@ -1,12 +1,3 @@
-
-class LoggingObserver {
-    static update(review){
-        console.log(
-            `[${new Date().toISOString()}] ${review.title} was reviewed by ${review.userId}`
-        )
-    }
-}
-
 class StatsObserver{
     static totalReviews = 0;
     static criticReviews = 0;
@@ -29,3 +20,5 @@ class StatsObserver{
     }
 
 }
+
+export default class StatsObserver;
