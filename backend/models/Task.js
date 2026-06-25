@@ -7,6 +7,10 @@ const taskSchema = new mongoose.Schema({
     artist_name: { type: String, required: true },
     description: { type: String, required: true },
     rating: { type: Number, required: true },
+    date:{ type: String, required:true},
+    time:{type: String,required:true},
+    isCriticReview: {type:Boolean, required:true}
+    isHighlightable: {type:Boolean,required:true}
 });
 
 module.exports = mongoose.model('Task', taskSchema);

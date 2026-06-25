@@ -60,3 +60,4 @@ class ReviewObserver{
     }
 }
 
+module.exports = ReviewFacade;
