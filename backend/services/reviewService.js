@@ -1,5 +1,7 @@
 
 const Task = require('../models/Task');  
+import LoggingObserver from '../observers/LoggingObserver';
+import StatsObserver from '../observers/StatsObserver';
 
 class ReviewFacade {
     static makeReview(user,title, artist_name, description, rating){
@@ -46,6 +48,7 @@ class ReviewBuilder{
 
 class ReviewObserver{
     static observers = [];
+
     static notifyObservers(review){
         this.observers.forEach(subscriber => {
             subscriber.update(review)
@@ -56,3 +59,5 @@ class ReviewObserver{
 
     }
 }
+
+export class ReviewObserver {};
