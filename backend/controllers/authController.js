@@ -2,7 +2,7 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const UserAdapter = require('../adapters/UserAdapter')
+const LegacyUserAdapter = require('../adapters/LegacyUserAdapter')
 
 const generateToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' });
