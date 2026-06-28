@@ -39,7 +39,7 @@ class ReviewBuilder{
         review.isCriticReview = user.critic
     }
     static setDateTime(review){
-        review.date = new Date().toLocaleDateString()
+        review.date = new Date()
         review.time = new Date().toLocaleTimeString()
     }
     static setHighlightable(review){
