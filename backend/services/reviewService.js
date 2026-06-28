@@ -43,7 +43,9 @@ class ReviewBuilder{
         review.time = new Date().toLocaleTimeString()
     }
     static setHighlightable(review){
-        review.isHighlightable = (review.description.trim().split(/\s+/).length || 0) >= 50
+        // [Terry] Added null check to avoid error when description is undefined
+        const description = review.description || '';
+        review.isHighlightable = (description.trim().split(/\s+/).length || 0) >= 50
     }
 }
 
