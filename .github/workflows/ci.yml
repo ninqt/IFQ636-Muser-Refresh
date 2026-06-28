@@ -47,7 +47,7 @@ jobs:
         df -h
         sudo rm -rf ./build
         npm install
-        npm run build
+        NODE_OPTIONS=--max_old_space_size=400 npm run build
 
     # Create .env file for production
     - name: Create .env file
