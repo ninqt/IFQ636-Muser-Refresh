@@ -39,11 +39,11 @@ class ReviewBuilder{
         review.isCriticReview = user.critic
     }
     static setDateTime(review){
-        review.date = new Date()
+        review.date = new Date().toLocaleDateString()
         review.time = new Date().toLocaleTimeString()
     }
     static setHighlightable(review){
-        review.isHighlightable = (review.description.trim().split(/\s+/).length || 0) >= 50
+        review.isReviewHighlightable = (review.review_description.trim().split(/\s+/).length || 0) >= 50
     }
 }
 
