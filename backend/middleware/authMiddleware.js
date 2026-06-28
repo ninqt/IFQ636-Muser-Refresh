@@ -129,4 +129,15 @@ authManager.addMiddleware(new CheckUserExists());
 // Export both protect (Sean) and protectChain (Terry)
 const protectChain = authManager.handle();
 
-module.exports = { protect, protectChain };
+// [Terry] Create standalone instances for individual testing
+const checkTokenExistsInstance = new CheckTokenExists();
+const checkTokenValidInstance = new CheckTokenValid();
+const checkUserExistsInstance = new CheckUserExists();
+
+module.exports = { 
+    protect, 
+    protectChain,
+    checkTokenExists: (req, res, next) => checkTokenExistsInstance.process(req, res, next),
+    checkTokenValid: (req, res, next) => checkTokenValidInstance.process(req, res, next),
+    checkUserExists: (req, res, next) => checkUserExistsInstance.process(req, res, next)
+};
